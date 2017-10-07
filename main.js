@@ -6,9 +6,7 @@ window.onload = function() {
 
   function handleDragStart(event) {
     event.dataTransfer.effectAllowed = 'move';
-    // event.dataTransfer.setData('text/html', event.target.innerHTML);
     event.dataTransfer.setData('text/plain', event.target.innerHTML);
-
   }
 
   function handleDragOver(event) {
@@ -17,9 +15,7 @@ window.onload = function() {
   }
 
   function handleDrop(event) {
-
     const text = event.dataTransfer.getData('text');
-    // console.log(text)
     const span = document.createElement('span');
     span.innerHTML = text;
     event.target.appendChild(span);
