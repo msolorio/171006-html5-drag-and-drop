@@ -21,11 +21,21 @@ window.onload = function() {
     event.target.appendChild(span);
   }
 
+  function handleDragEnter(event) {
+    event.target.classList.add('hovered');
+  }
+
+  function handleDragLeave(event) {
+    event.target.classList.remove('hovered');
+  }
+
   words.forEach(word => {
     word.addEventListener('dragstart', handleDragStart, false);
   });
 
   dropbox.addEventListener('dragover', handleDragOver, false);
+  dropbox.addEventListener('dragenter', handleDragEnter, false);
+  dropbox.addEventListener('dragleave', handleDragLeave, false);
   dropbox.addEventListener('drop', handleDrop, false);
 
 }
